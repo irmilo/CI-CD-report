@@ -4,18 +4,22 @@
 
 Download 
 > curl -LJO "https://gitlab-runner-downloads.s3.amazonaws.com/latest/deb/gitlab-runner_amd64.deb"  
+
 Install:
 > dpkg -i gitlab-runner_amd64.deb  
+
 ![./screenshots/1.png](./screenshots/1.png)  
 ![./screenshots/2.png](./screenshots/2.png)  
 
 1.2 Регистрация раннера в gitlab-runner  
 
 > sudo gitlab-runner register  
+
 Добавляем раннеру те теги, что будут использоваться в gitlab-ci.yml (так он сможет приступить к job`е)
 ![./screenshots/3.png](./screenshots/3.png)
 Валидируем раннеров    
 > sudo gitlab-runner verify  
+
 Проверяем статус службы "gitlab-runner"
 > service gitlab-runner status
 
@@ -24,9 +28,11 @@ Install:
 
 2.1 Создание и конфигурация .gitlab-ci.yml в корне репозитория
 > vim .gitlab-ci.yml  
+  
 ![./screenshots/4.png](./screenshots/4.png)   
 Запуск пайп-лайна, запуск раннера
 > sudo gitlab-runner run    
+  
 Раннер успешно выполнил job по сборке проекта
 ![./screenshots/5.png](./screenshots/5.png)    
 
@@ -83,10 +89,12 @@ ping идёт:
 ![./screenshots/22.png](./screenshots/22.png)   
 > ssh-keygen -t rsa -b 2045  
 > ssh-copy-id milagros@10.10.0.2  
+
 ![./screenshots/23.png](./screenshots/23.png)   
 
 5.7 Выдадим права на второй машине, для папки `/usr/local/bin/`
 > sudo chmod -R 777 /usr/local/bin  
+
 ![./screenshots/24.png](./screenshots/24.png)   
 
 5.8 Пушим измененный yml и скрипт copy.sh, пайплайн проходит и ожидает ручного запуска:  
