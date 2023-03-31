@@ -5,13 +5,13 @@ Download
 > curl -LJO "https://gitlab-runner-downloads.s3.amazonaws.com/latest/deb/gitlab-runner_amd64.deb"  
 Install:
 > dpkg -i gitlab-runner_amd64.deb
-![./screenshots/Screenshot_1.png](./screenshots/Screenshot_1.png)  
-![./screenshots/Screenshot_2.png](./screenshots/Screenshot_2.png)  
+![./screenshots/1.png](./screenshots/1.png)  
+![./screenshots/2.png](./screenshots/2.png)  
 
 1.2 Регистрация раннера в gitlab-runner  
 > sudo gitlab-runner register
 Добавляем раннеру те теги, что будут использоваться в gitlab-ci.yml (так он сможет приступить к job`е)
-![./screenshots/Screenshot_3.png](./screenshots/Screenshot_3.png)
+![./screenshots/3.png](./screenshots/3.png)
 Валидируем раннеров    
 > sudo gitlab-runner verify  
 Проверяем статус службы "gitlab-runner"
@@ -22,26 +22,26 @@ Install:
 
 2.1 Создание и конфигурация .gitlab-ci.yml в корне репозитория
 > vim .gitlab-ci.yml
-![./screenshots/Screenshot_4.png](./screenshots/Screenshot_4.png)   
+![./screenshots/4.png](./screenshots/4.png)   
 Запуск пайп-лайна, запуск раннера
 > sudo gitlab-runner run  
 Раннер успешно выполнил job по сборке проекта
-![./screenshots/Screenshot_5.png](./screenshots/Screenshot_5.png)   
+![./screenshots/5.png](./screenshots/5.png)   
 
 
 ### Part 3. Тест кодстайла
 
 3.1 Добавляем stage для кодстайла в gitlab-ci.yml и пушим в репозиторий.  
-![./screenshots/Screenshot_6.png](./screenshots/Screenshot_6.png)    
+![./screenshots/6.png](./screenshots/6.png)    
 
 Проверяем результат работы раннера, как видим - кодстайл не прошёл и зафейлил пайплайн
-![./screenshots/Screenshot_7.png](./screenshots/Screenshot_7.png)    
-![./screenshots/Screenshot_8.png](./screenshots/Screenshot_8.png)  
+![./screenshots/7.png](./screenshots/7.png)    
+![./screenshots/8.png](./screenshots/8.png)  
 
 Исправляем кодстайл, запускаем проверку вновь.
 Кодстайл прошёл успешно, пайплайн завершен.
-![./screenshots/Screenshot_9.png](./screenshots/Screenshot_9.png)    
-![./screenshots/Screenshot_10.png](./screenshots/Screenshot_10.png)  
+![./screenshots/9.png](./screenshots/9.png)    
+![./screenshots/10.png](./screenshots/10.png)  
 
 
 ### Part 4. Интеграционные тесты
